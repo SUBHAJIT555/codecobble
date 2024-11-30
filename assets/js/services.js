@@ -672,7 +672,7 @@ gsap.to(".page7-cir-inner",{
     scroller:`#main`,
     scrub:.5
   },
-  backgroundColor : `#0a3bce91`,
+  // backgroundColor : `#0a3bce91`,
 })
 
  gsap.from("#page11 .page11-inner", {
@@ -681,10 +681,10 @@ gsap.to(".page7-cir-inner",{
    stagger: 0.5,
    duration: 0.5,
    scrollTrigger: {
-     trigger: ".right11",
+     trigger: ".page11-inner",
      scroller: "#main",
      start: "top 70%",
-     end: "top -20%",
+     end: "top -10%",
      scrub: 3,
    },
  });

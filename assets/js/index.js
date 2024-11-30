@@ -69,7 +69,6 @@ function loaderAnimation() {
 }
 loaderAnimation();
 
-
 gsap.to("#page>video", {
   scrollTrigger: {
     trigger: `#page>video`,
@@ -102,6 +101,268 @@ gsap.to("#page-bottom", {
   },
   opacity: 0,
 });
+
+function canvas2() {
+  const canvas = document.querySelector("#page-videosolution>canvas");
+  const context = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render();
+  });
+
+  function files(index) {
+    var data = `
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00000.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00001.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00002.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00003.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00004.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00005.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00006.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00007.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00008.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00009.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00010.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00011.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00012.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00013.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00014.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00015.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00016.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00017.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00018.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00019.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00020.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00021.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00022.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00023.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00024.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00025.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00026.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00027.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00028.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00029.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00030.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00031.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00032.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00033.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00034.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00035.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00036.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00037.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00038.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00039.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00040.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00041.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00042.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00043.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00044.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00045.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00046.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00047.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00048.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00049.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00050.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00051.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00052.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00053.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00054.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00055.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00056.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00057.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00058.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00059.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00060.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00061.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00062.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00063.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00064.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00065.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00066.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00067.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00068.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00069.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00070.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00071.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00072.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00073.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00074.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00075.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00076.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00077.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00078.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00079.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00080.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00081.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00082.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00083.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00084.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00085.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00086.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00087.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00088.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00089.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00090.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00091.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00092.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00093.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00094.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00095.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00096.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00097.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00098.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00099.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00100.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00101.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00102.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00103.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00104.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00105.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00106.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00107.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00108.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00109.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00110.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00111.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00112.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00113.webp
+/assets/canvas-asstes/videosolution/Video-solution_video-solution_00114.webp
+`;
+    return data.split("\n")[index];
+  }
+
+  const frameCount = 115;
+  const images = [];
+  const imageSeq = {
+    frame: 0.5,
+  };
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = files(i);
+    images.push(img);
+  }
+
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: `none`,
+    scrollTrigger: {
+      scrub: 0.15,
+      trigger: `#page-videosolution`,
+      //   set start end according to preference
+      start: `top top`,
+      end: `80% top`,
+      scroller: `#main`,
+    },
+    onUpdate: render,
+  });
+
+  images[1].onload = render;
+
+  function render() {
+    scaleImage(images[imageSeq.frame], context);
+  }
+
+  function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.max(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    );
+  }
+  ScrollTrigger.create({
+    trigger: "#page-videosolution",
+    pin: true,
+    // markers:true,
+    scroller: `#main`,
+    //   set start end according to preference
+    start: `top top`,
+    end: `150% top`,
+  });
+}
+canvas2();
+
+
+// --------------------------------------- 
+
+ 
+// ----------------------------------------- 
+
+
+
+function videosolutionText(){
+  var clutter = "";
+
+  document
+    .querySelector("#videosolution-content>h1")
+    .textContent.split("")
+    .forEach(function (dets) {
+      clutter += `<span>${dets}</span>`;
+
+      document.querySelector("#videosolution-content>h1").innerHTML = clutter;
+    });
+
+  gsap.to("#videosolution-content>h1>span", {
+    scrollTrigger: {
+      trigger: `#videosolution-content>h1>span`,
+      start: `top bottom`,
+      end: `bottom top`,
+      scroller: `#main`,
+      scrub: 0.5,
+    },
+    stagger: 0.2,
+    color: `white`,
+  });
+}
+videosolutionText();
+
+function page5TextAnimation(){
+  var clutter = "";
+
+  document
+    .querySelector(".right5 p")
+    .textContent.split("")
+    .forEach(function (dets) {
+      clutter += `<span>${dets}</span>`;
+
+      document.querySelector(".right5>p").innerHTML = clutter;
+    });
+
+  gsap.to(".right5>p>span", {
+    scrollTrigger: {
+      trigger: `.right5>p>span`,
+      start: `top -170%`,
+      end: `bottom 100%`,
+      scroller: `#main`,
+      scrub: 0.1,
+    },
+    stagger: 1,
+    color: `white`,
+  });
+}
+page5TextAnimation();
+
+
+
 
 var tl = gsap.timeline({
   scrollTrigger: {
@@ -154,7 +415,7 @@ function canvas() {
 
   window.addEventListener("resize", function () {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight; 
+    canvas.height = window.innerHeight;
     render();
   });
 
@@ -596,11 +857,6 @@ navLinksItems.forEach((item) => {
   });
 });
 
-
-
-
-
-
 $(document).ready(function () {
   $("html,body").addClass("overflow");
   setTimeout(() => {
@@ -619,15 +875,19 @@ $(document).ready(function () {
     yPercent: -50,
     width: "40vh",
     height: "40vh",
-    scale: 1
+    scale: 1,
   });
 
   //img set
   gsap.set(".anime-card-front img", {
-    attr: { src: "https://www.yudiz.com/codepen/gsap-landing-page/tanjiro.jpg" }
+    attr: {
+      src: "https://www.yudiz.com/codepen/gsap-landing-page/tanjiro.jpg",
+    },
   });
   gsap.set(".anime-card-back img", {
-    attr: { src: "https://www.yudiz.com/codepen/gsap-landing-page/zenitsu.jpg" }
+    attr: {
+      src: "https://www.yudiz.com/codepen/gsap-landing-page/zenitsu.jpg",
+    },
   });
 
   //Main card-wrapper
@@ -646,8 +906,8 @@ $(document).ready(function () {
       start: "center center",
       end: "+=50",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   mainTxt2.to(".main-txt", { opacity: 0, ease: "linear" });
 
@@ -659,7 +919,7 @@ $(document).ready(function () {
     duration: 2.5,
     scale: 1,
     width: "100vw",
-    height: "100vh"
+    height: "100vh",
   });
 
   //Banner one image scale down
@@ -669,26 +929,26 @@ $(document).ready(function () {
       start: "center center",
       end: "+=600",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   if (window.innerWidth >= 1200 && window.innerWidth <= 1499) {
     t2.to($animeCard, {
       height: "60vh",
       width: "472.5px",
-      left: "calc(243.75px + (50% - 585px) + 682.5px)"
+      left: "calc(243.75px + (50% - 585px) + 682.5px)",
     });
   } else if (window.innerWidth >= 992 && window.innerWidth <= 1199) {
     t2.to($animeCard, {
       height: "60vh",
       width: "465px",
-      left: "calc(240px + (50% - 480px) + 480px)"
+      left: "calc(240px + (50% - 480px) + 480px)",
     });
   } else if (window.innerWidth >= 768 && window.innerWidth <= 991) {
     t2.to($animeCard, {
       height: "60vh",
       width: "345px",
-      left: "calc(180px + (50% - 360px) + 360px)"
+      left: "calc(180px + (50% - 360px) + 360px)",
     });
   } else if (window.innerWidth <= 767) {
     t2.to($animeCard, {
@@ -696,13 +956,13 @@ $(document).ready(function () {
       width: "95%",
       left: "50%",
       top: "calc(100% - 40px)",
-      yPercent: -100
+      yPercent: -100,
     });
   } else {
     t2.to($animeCard, {
       height: "60vh",
       width: "535px",
-      left: "calc(275px + (50% - 660px) + 770px)"
+      left: "calc(275px + (50% - 660px) + 770px)",
     });
   }
 
@@ -713,8 +973,8 @@ $(document).ready(function () {
       start: "center+=" + 100 + " center",
       end: "bottom center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   //Banner text-animation
@@ -728,8 +988,8 @@ $(document).ready(function () {
       start: "center+=" + 300 + " center",
       end: "+=200",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   //Banner animation
@@ -742,8 +1002,8 @@ $(document).ready(function () {
       markers: false,
       pin: true,
       pinSpacing: true,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   //Banner two animation
@@ -756,8 +1016,8 @@ $(document).ready(function () {
       markers: false,
       pin: true,
       pinSpacing: true,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   //Banner two image rotation
@@ -767,8 +1027,8 @@ $(document).ready(function () {
       start: "top center",
       end: "+=600",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   if (window.innerWidth <= 767) {
     t3.to($animeCard, {
@@ -777,14 +1037,14 @@ $(document).ready(function () {
       width: "100vw",
       left: "50%",
       top: "50%",
-      yPercent: -50
+      yPercent: -50,
     });
   } else {
     t3.to($animeCard, {
       rotationY: -180,
       height: "100vh",
       width: "100vw",
-      left: "50%"
+      left: "50%",
     });
   }
 
@@ -798,8 +1058,8 @@ $(document).ready(function () {
       markers: false,
       pin: true,
       pinSpacing: true,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   //Banner three image rotation
@@ -809,29 +1069,29 @@ $(document).ready(function () {
       start: "top center",
       end: "+=600",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   if (window.innerWidth >= 1200 && window.innerWidth <= 1499) {
     t4.to($animeCard, {
       rotationY: -360,
       height: "60vh",
       width: "472.5px",
-      left: "calc((50% - 585px) + 243.75px)"
+      left: "calc((50% - 585px) + 243.75px)",
     });
   } else if (window.innerWidth >= 992 && window.innerWidth <= 1199) {
     t4.to($animeCard, {
       rotationY: -360,
       height: "60vh",
       width: "465px",
-      left: "calc((50% - 465px) + 240px)"
+      left: "calc((50% - 465px) + 240px)",
     });
   } else if (window.innerWidth >= 768 && window.innerWidth <= 991) {
     t4.to($animeCard, {
       rotationY: -360,
       height: "60vh",
       width: "345px",
-      left: "calc((50% - 360px) + 180px)"
+      left: "calc((50% - 360px) + 180px)",
     });
   } else if (window.innerWidth <= 767) {
     t4.to($animeCard, {
@@ -840,14 +1100,14 @@ $(document).ready(function () {
       width: "95%",
       left: "50%",
       top: "calc(100% - 40px)",
-      yPercent: -100
+      yPercent: -100,
     });
   } else {
     t4.to($animeCard, {
       rotationY: -360,
       height: "60vh",
       width: "535px",
-      left: "calc((50% - 660px) + 275px)"
+      left: "calc((50% - 660px) + 275px)",
     });
   }
 
@@ -861,8 +1121,8 @@ $(document).ready(function () {
       markers: false,
       pin: true,
       pinSpacing: true,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   //Banner four image rotation
@@ -872,8 +1132,8 @@ $(document).ready(function () {
       start: "top center",
       end: "+=600",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   if (window.innerWidth <= 767) {
     t5.to($animeCard, {
@@ -882,14 +1142,14 @@ $(document).ready(function () {
       width: "100vw",
       left: "50%",
       top: "50%",
-      yPercent: -50
+      yPercent: -50,
     });
   } else {
     t5.to($animeCard, {
       rotationY: -180,
       height: "100vh",
       width: "100vw",
-      left: "50%"
+      left: "50%",
     });
   }
 
@@ -904,8 +1164,8 @@ $(document).ready(function () {
       markers: false,
       pin: true,
       pinSpacing: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   //slider-left img animation
@@ -920,8 +1180,8 @@ $(document).ready(function () {
       start: "center+=" + 180 + " center",
       end: "center+=" + 900 + " center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   gsap.to(".slider-left .img-2", {
     ease: "none",
@@ -932,8 +1192,8 @@ $(document).ready(function () {
       start: "center+=" + 360 + " center",
       end: "center+=" + 900 + " center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   gsap.to(".slider-left .img-3", {
     ease: "none",
@@ -944,8 +1204,8 @@ $(document).ready(function () {
       start: "center+=" + 540 + " center",
       end: "center+=" + 900 + " center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   gsap.to(".slider-left .img-4", {
     ease: "none",
@@ -956,8 +1216,8 @@ $(document).ready(function () {
       start: "center+=" + 720 + " center",
       end: "center+=" + 900 + " center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   gsap.to(".slider-left .img-5", {
     ease: "none",
@@ -968,8 +1228,8 @@ $(document).ready(function () {
       start: "center+=" + 800 + " center",
       end: "center+=" + 900 + " center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   // slider right img animation
@@ -984,8 +1244,8 @@ $(document).ready(function () {
       start: "center+=" + 180 + " center",
       end: "center+=" + 900 + " center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   gsap.to(".slider-right .img-2", {
     ease: "none",
@@ -996,8 +1256,8 @@ $(document).ready(function () {
       start: "center+=" + 360 + " center",
       end: "center+=" + 900 + " center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   gsap.to(".slider-right .img-3", {
     ease: "none",
@@ -1008,8 +1268,8 @@ $(document).ready(function () {
       start: "center+=" + 540 + " center",
       end: "center+=" + 900 + " center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   gsap.to(".slider-right .img-4", {
     ease: "none",
@@ -1020,8 +1280,8 @@ $(document).ready(function () {
       start: "center+=" + 720 + " center",
       end: "center+=" + 900 + " center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
   gsap.to(".slider-right .img-5", {
     ease: "none",
@@ -1032,8 +1292,8 @@ $(document).ready(function () {
       start: "center+=" + 800 + " center",
       end: "center+=" + 900 + " center",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   //slider card
@@ -1046,14 +1306,14 @@ $(document).ready(function () {
       markers: false,
       pin: true,
       pinSpacing: true,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   // image source changed
   gsap.to(".anime-card-front img", {
     attr: {
-      src: "https://www.yudiz.com/codepen/gsap-landing-page/inosuke.jpg"
+      src: "https://www.yudiz.com/codepen/gsap-landing-page/inosuke.jpg",
     },
     scrollTrigger: {
       trigger: ".banner-three",
@@ -1061,8 +1321,8 @@ $(document).ready(function () {
       end: "top bottom",
       endTrigger: ".slider-card ",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
   gsap.to(".anime-card-back img", {
@@ -1073,39 +1333,31 @@ $(document).ready(function () {
       end: "top bottom",
       endTrigger: ".slider-card ",
       markers: false,
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 });
 
-
-
-
-
-
-
 ///////////////////////////
 const cursor = document.querySelector(".cb-cursor");
-window.onpointermove = event => {
-    const { clientX, clientY } = event;
-    cursor.animate({
-        left: `${clientX}px`,
-        top: `${clientY}px`
-    }, { duration: 3000, fill: "forwards" })
-}
-const elements = [...document.querySelectorAll("h2 div")]
-elements.map(element => {
-    element.onmouseover = () => {
-        cursor.classList.add("-video")
-    }
-    element.onmouseout = () => {
-        cursor.classList.remove("-video")
-    }
-})
+window.onpointermove = (event) => {
+  const { clientX, clientY } = event;
+  cursor.animate(
+    {
+      left: `${clientX}px`,
+      top: `${clientY}px`,
+    },
+    { duration: 3000, fill: "forwards" }
+  );
+};
+const elements = [...document.querySelectorAll("h2 div")];
+elements.map((element) => {
+  element.onmouseover = () => {
+    cursor.classList.add("-video");
+  };
+  element.onmouseout = () => {
+    cursor.classList.remove("-video");
+  };
+});
 
-
-
-
-
-// -------------------------------------------------------------------------- 
-
+// --------------------------------------------------------------------------

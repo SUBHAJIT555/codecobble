@@ -27,7 +27,7 @@ body {
   width: 100vw;
   height: 100vh;
   /* overflow-x: hidden; */
-  background-color: #262525;
+  background-color: #000;
 }
 :root {
   --heading-font: Croparo;
@@ -37,25 +37,25 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background-color: #262525;
+  background-color: #000;
 }
 #hero1 {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background-color: #262525;
+  background-color: #000;
 }
 #hero2 {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background-color: #262525;
+  background-color: #000;
 }
 #hero3 {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background-color: #262525;
+  background-color: #000;
 }
 canvas {
   position: relative;
@@ -209,7 +209,7 @@ canvas {
 #page2 {
   height: 100vh;
   width: 100%;
-  background-color: #262525;
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -248,16 +248,16 @@ canvas {
   background-color: lawngreen;
   border-radius: 50px;
   border: none;
-  color: #262525;
+  color: #000;
 }
 #right {
-  width: 30%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #right img {
-  height: 400px;
+  height: 500px;
 }
 
 #page3 {
@@ -659,7 +659,7 @@ canvas {
   flex-wrap: wrap;
 }
 input {
-  background-color: #262525;
+  background-color: #000;
   border: 0.5px solid #dadada;
   padding: 20px;
   border-radius: 50px;
@@ -679,7 +679,7 @@ input {
   justify-content: center;
 }
 textarea {
-  background-color: #262525;
+  background-color: #000;
   border: 0.5px solid #dadada;
   padding: 20px;
   border-radius: 20px;
@@ -693,12 +693,12 @@ textarea {
   padding: 0.5vw 1vw;
   border: none;
   background-color: lawngreen;
-  color: #262525;
+  color: #000;
   font-family: var(--text-font);
   font-size: 1.2rem;
   border: 3px solid #000;
   border-radius: 50px;
-  box-shadow: 5px 5px #262525, 7px 7px lawngreen;
+  box-shadow: 5px 5px #000, 7px 7px lawngreen;
   transition: all ease 0.3s;
 }
 #contact-button button:hover {
@@ -829,7 +829,7 @@ textarea {
 }
 #newsletter #button button {
   font-size: 2rem;
-  color: #262525;
+  color: #000;
   background-color: lawngreen;
   width: 25%;
   border: none;
@@ -843,106 +843,4 @@ textarea {
   padding-top: 1vw;
   font-family: var(--text-font);
   color: white;
-}
-@media (max-width:1024px) {
-  #footer h1{
-    font-size: 1.5rem;
-  }
-  #footer p{
-    font-size: 0.9rem;
-    
-  }
-  #footer a,
-  #footer h3{
-    font-size: 0.9rem;
-    line-height: 1.5rem;
-  }
-  #newsletter p{
-    line-height: 1.5rem;
-  }
-}
-@media (max-width:768px) {
-  #footer-top{
-    display: flex;
-    flex-direction: column;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-  #footer-first{
-    display: flex;
-    justify-content: space-between;
-  }
-  #address{
-    width: 50%;
-    /* text-align: center; */
-  }
-  #UsefullLinks{
-    width: 40%;
-    /* text-align: center; */
-    border-left: none;
-  }
-  #footer-second{
-    display: flex;
-    justify-content: space-between;
-  }
-  #catagory{
-    width: 50%;
-    border-left: none;
-  }
-  #newsletter{
-    width: 40%;
-    border-left: none;
-  }
-  .input{
-    height: 10px;
-  }
-  #newsletter #button button {
-  font-size: 1.5rem;
-  width: 20%;
-  border: none;
-  border-radius: 50px;
-}
-  
-}
-@media (max-width:480px){
- 
-  #footer-top{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-  }
-  #footer-first{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  #address{
-    width: 100%;
-    text-align: left;
-  }
-  #address{
-    line-height: 25px;
-  }
-  #UsefullLinks{
-    width: 100%;
-    text-align: left;
-  }
-  #footer-second{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  #catagory{
-    width: 100%;
-    text-align: left;
-  }
-  #newsletter{
-    width: 100%;
-    text-align: left;
-  }
- 
 }
