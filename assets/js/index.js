@@ -39,35 +39,7 @@ function loco() {
 }
 loco();
 
-function loaderAnimation() {
-  var tl = gsap.timeline();
 
-  tl.from("#loader h3", {
-    x: 50,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.5,
-  });
-  tl.to("#loader h3", {
-    opacity: 0,
-    x: -50,
-    duration: 1,
-    stagger: 0.5,
-  });
-  tl.to("#loader", {
-    opacity: 0,
-  });
-  tl.to("#loader", {
-    display: "none",
-  });
-  tl.from("#page1-content h1 span", {
-    y: 100,
-    opacity: 0,
-    stagger: 0.1,
-    duration: 0.5,
-  });
-}
-loaderAnimation();
 
 gsap.to("#page>video", {
   scrollTrigger: {
@@ -256,8 +228,8 @@ function canvas2() {
       scrub: 0.15,
       trigger: `#page-videosolution`,
       //   set start end according to preference
-      start: `top top`,
-      end: `80% top`,
+      start: `-40% top`,
+      end: `100% top`,
       scroller: `#main`,
     },
     onUpdate: render,
@@ -421,210 +393,351 @@ function canvas() {
 
   function files(index) {
     var data = `
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0000.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0001.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0002.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0003.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0004.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0005.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0006.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0007.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0008.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0009.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0010.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0011.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0012.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0013.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0014.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0015.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0016.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0017.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0018.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0019.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0020.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0021.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0022.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0023.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0024.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0025.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0026.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0027.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0028.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0029.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0030.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0031.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0032.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0033.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0034.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0035.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0036.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0037.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0038.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0039.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0040.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0041.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0042.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0043.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0044.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0045.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0046.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0047.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0048.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0049.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0050.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0051.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0052.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0053.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0054.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0055.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0056.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0057.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0058.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0059.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0060.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0061.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0062.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0063.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0064.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0065.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0066.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0067.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0068.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0069.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0070.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0071.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0072.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0073.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0074.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0075.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0076.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0077.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0078.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0079.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0080.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0081.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0082.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0083.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0084.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0085.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0086.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0087.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0088.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0089.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0090.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0091.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0092.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0093.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0094.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0095.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0096.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0097.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0098.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0099.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0100.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0101.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0102.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0103.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0104.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0105.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0106.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0107.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0108.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0109.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0110.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0111.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0112.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0113.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0114.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0115.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0116.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0117.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0118.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0119.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0120.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0121.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0122.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0123.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0124.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0125.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0126.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0127.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0128.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0129.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0130.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0131.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0132.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0133.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0134.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0135.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0136.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0137.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0138.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0139.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0140.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0141.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0142.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0143.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0144.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0145.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0146.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0147.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0148.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0149.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0150.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0151.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0153.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0154.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0155.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0156.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0157.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0158.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0159.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0160.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0161.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0162.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0163.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0164.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0165.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0166.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0167.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0168.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0169.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0170.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0171.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0172.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0173.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0174.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0175.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0176.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0177.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0178.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0179.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0180.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0181.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0182.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0183.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0184.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0185.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0186.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0187.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0188.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0189.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0190.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0191.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0192.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0193.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0194.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0195.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0196.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0197.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0198.jpg
-  https://www.apple.com/105/media/us/apple-vision-pro/2023/7e268c13-eb22-493d-a860-f0637bacb569/anim/360/large/0199.jpg
+  /assets/canvas-asstes/home/About_video_00021.webp
+/assets/canvas-asstes/home/About_video_00022.webp
+/assets/canvas-asstes/home/About_video_00023.webp
+/assets/canvas-asstes/home/About_video_00024.webp
+/assets/canvas-asstes/home/About_video_00025.webp
+/assets/canvas-asstes/home/About_video_00026.webp
+/assets/canvas-asstes/home/About_video_00027.webp
+/assets/canvas-asstes/home/About_video_00028.webp
+/assets/canvas-asstes/home/About_video_00029.webp
+/assets/canvas-asstes/home/About_video_00030.webp
+/assets/canvas-asstes/home/About_video_00031.webp
+/assets/canvas-asstes/home/About_video_00032.webp
+/assets/canvas-asstes/home/About_video_00033.webp
+/assets/canvas-asstes/home/About_video_00034.webp
+/assets/canvas-asstes/home/About_video_00035.webp
+/assets/canvas-asstes/home/About_video_00036.webp
+/assets/canvas-asstes/home/About_video_00037.webp
+/assets/canvas-asstes/home/About_video_00038.webp
+/assets/canvas-asstes/home/About_video_00039.webp
+/assets/canvas-asstes/home/About_video_00040.webp
+/assets/canvas-asstes/home/About_video_00041.webp
+/assets/canvas-asstes/home/About_video_00042.webp
+/assets/canvas-asstes/home/About_video_00043.webp
+/assets/canvas-asstes/home/About_video_00044.webp
+/assets/canvas-asstes/home/About_video_00045.webp
+/assets/canvas-asstes/home/About_video_00046.webp
+/assets/canvas-asstes/home/About_video_00047.webp
+/assets/canvas-asstes/home/About_video_00048.webp
+/assets/canvas-asstes/home/About_video_00049.webp
+/assets/canvas-asstes/home/About_video_00050.webp
+/assets/canvas-asstes/home/About_video_00051.webp
+/assets/canvas-asstes/home/About_video_00052.webp
+/assets/canvas-asstes/home/About_video_00053.webp
+/assets/canvas-asstes/home/About_video_00054.webp
+/assets/canvas-asstes/home/About_video_00055.webp
+/assets/canvas-asstes/home/About_video_00056.webp
+/assets/canvas-asstes/home/About_video_00057.webp
+/assets/canvas-asstes/home/About_video_00058.webp
+/assets/canvas-asstes/home/About_video_00059.webp
+/assets/canvas-asstes/home/About_video_00060.webp
+/assets/canvas-asstes/home/About_video_00061.webp
+/assets/canvas-asstes/home/About_video_00062.webp
+/assets/canvas-asstes/home/About_video_00063.webp
+/assets/canvas-asstes/home/About_video_00064.webp
+/assets/canvas-asstes/home/About_video_00065.webp
+/assets/canvas-asstes/home/About_video_00066.webp
+/assets/canvas-asstes/home/About_video_00067.webp
+/assets/canvas-asstes/home/About_video_00068.webp
+/assets/canvas-asstes/home/About_video_00069.webp
+/assets/canvas-asstes/home/About_video_00070.webp
+/assets/canvas-asstes/home/About_video_00071.webp
+/assets/canvas-asstes/home/About_video_00072.webp
+/assets/canvas-asstes/home/About_video_00073.webp
+/assets/canvas-asstes/home/About_video_00074.webp
+/assets/canvas-asstes/home/About_video_00075.webp
+/assets/canvas-asstes/home/About_video_00076.webp
+/assets/canvas-asstes/home/About_video_00077.webp
+/assets/canvas-asstes/home/About_video_00078.webp
+/assets/canvas-asstes/home/About_video_00079.webp
+/assets/canvas-asstes/home/About_video_00080.webp
+/assets/canvas-asstes/home/About_video_00081.webp
+/assets/canvas-asstes/home/About_video_00082.webp
+/assets/canvas-asstes/home/About_video_00083.webp
+/assets/canvas-asstes/home/About_video_00084.webp
+/assets/canvas-asstes/home/About_video_00085.webp
+/assets/canvas-asstes/home/About_video_00086.webp
+/assets/canvas-asstes/home/About_video_00087.webp
+/assets/canvas-asstes/home/About_video_00088.webp
+/assets/canvas-asstes/home/About_video_00089.webp
+/assets/canvas-asstes/home/About_video_00090.webp
+/assets/canvas-asstes/home/About_video_00091.webp
+/assets/canvas-asstes/home/About_video_00092.webp
+/assets/canvas-asstes/home/About_video_00093.webp
+/assets/canvas-asstes/home/About_video_00094.webp
+/assets/canvas-asstes/home/About_video_00095.webp
+/assets/canvas-asstes/home/About_video_00096.webp
+/assets/canvas-asstes/home/About_video_00097.webp
+/assets/canvas-asstes/home/About_video_00098.webp
+/assets/canvas-asstes/home/About_video_00099.webp
+/assets/canvas-asstes/home/About_video_00100.webp
+/assets/canvas-asstes/home/About_video_00101.webp
+/assets/canvas-asstes/home/About_video_00102.webp
+/assets/canvas-asstes/home/About_video_00103.webp
+/assets/canvas-asstes/home/About_video_00104.webp
+/assets/canvas-asstes/home/About_video_00105.webp
+/assets/canvas-asstes/home/About_video_00106.webp
+/assets/canvas-asstes/home/About_video_00107.webp
+/assets/canvas-asstes/home/About_video_00108.webp
+/assets/canvas-asstes/home/About_video_00109.webp
+/assets/canvas-asstes/home/About_video_00110.webp
+/assets/canvas-asstes/home/About_video_00111.webp
+/assets/canvas-asstes/home/About_video_00112.webp
+/assets/canvas-asstes/home/About_video_00113.webp
+/assets/canvas-asstes/home/About_video_00114.webp
+/assets/canvas-asstes/home/About_video_00115.webp
+/assets/canvas-asstes/home/About_video_00116.webp
+/assets/canvas-asstes/home/About_video_00117.webp
+/assets/canvas-asstes/home/About_video_00118.webp
+/assets/canvas-asstes/home/About_video_00119.webp
+/assets/canvas-asstes/home/About_video_00120.webp
+/assets/canvas-asstes/home/About_video_00121.webp
+/assets/canvas-asstes/home/About_video_00122.webp
+/assets/canvas-asstes/home/About_video_00123.webp
+/assets/canvas-asstes/home/About_video_00124.webp
+/assets/canvas-asstes/home/About_video_00125.webp
+/assets/canvas-asstes/home/About_video_00126.webp
+/assets/canvas-asstes/home/About_video_00127.webp
+/assets/canvas-asstes/home/About_video_00128.webp
+/assets/canvas-asstes/home/About_video_00129.webp
+/assets/canvas-asstes/home/About_video_00130.webp
+/assets/canvas-asstes/home/About_video_00131.webp
+/assets/canvas-asstes/home/About_video_00132.webp
+/assets/canvas-asstes/home/About_video_00133.webp
+/assets/canvas-asstes/home/About_video_00134.webp
+/assets/canvas-asstes/home/About_video_00135.webp
+/assets/canvas-asstes/home/About_video_00136.webp
+/assets/canvas-asstes/home/About_video_00137.webp
+/assets/canvas-asstes/home/About_video_00138.webp
+/assets/canvas-asstes/home/About_video_00139.webp
+/assets/canvas-asstes/home/About_video_00140.webp
+/assets/canvas-asstes/home/About_video_00141.webp
+/assets/canvas-asstes/home/About_video_00142.webp
+/assets/canvas-asstes/home/About_video_00143.webp
+/assets/canvas-asstes/home/About_video_00144.webp
+/assets/canvas-asstes/home/About_video_00145.webp
+/assets/canvas-asstes/home/About_video_00146.webp
+/assets/canvas-asstes/home/About_video_00147.webp
+/assets/canvas-asstes/home/About_video_00148.webp
+/assets/canvas-asstes/home/About_video_00149.webp
+/assets/canvas-asstes/home/About_video_00150.webp
+/assets/canvas-asstes/home/About_video_00151.webp
+/assets/canvas-asstes/home/About_video_00152.webp
+/assets/canvas-asstes/home/About_video_00153.webp
+/assets/canvas-asstes/home/About_video_00154.webp
+/assets/canvas-asstes/home/About_video_00155.webp
+/assets/canvas-asstes/home/About_video_00156.webp
+/assets/canvas-asstes/home/About_video_00157.webp
+/assets/canvas-asstes/home/About_video_00158.webp
+/assets/canvas-asstes/home/About_video_00159.webp
+/assets/canvas-asstes/home/About_video_00160.webp
+/assets/canvas-asstes/home/About_video_00161.webp
+/assets/canvas-asstes/home/About_video_00162.webp
+/assets/canvas-asstes/home/About_video_00163.webp
+/assets/canvas-asstes/home/About_video_00164.webp
+/assets/canvas-asstes/home/About_video_00165.webp
+/assets/canvas-asstes/home/About_video_00166.webp
+/assets/canvas-asstes/home/About_video_00167.webp
+/assets/canvas-asstes/home/About_video_00168.webp
+/assets/canvas-asstes/home/About_video_00169.webp
+/assets/canvas-asstes/home/About_video_00170.webp
+/assets/canvas-asstes/home/About_video_00171.webp
+/assets/canvas-asstes/home/About_video_00172.webp
+/assets/canvas-asstes/home/About_video_00173.webp
+/assets/canvas-asstes/home/About_video_00174.webp
+/assets/canvas-asstes/home/About_video_00175.webp
+/assets/canvas-asstes/home/About_video_00176.webp
+/assets/canvas-asstes/home/About_video_00177.webp
+/assets/canvas-asstes/home/About_video_00178.webp
+/assets/canvas-asstes/home/About_video_00179.webp
+/assets/canvas-asstes/home/About_video_00180.webp
+/assets/canvas-asstes/home/About_video_00181.webp
+/assets/canvas-asstes/home/About_video_00182.webp
+/assets/canvas-asstes/home/About_video_00183.webp
+/assets/canvas-asstes/home/About_video_00184.webp
+/assets/canvas-asstes/home/About_video_00185.webp
+/assets/canvas-asstes/home/About_video_00186.webp
+/assets/canvas-asstes/home/About_video_00187.webp
+/assets/canvas-asstes/home/About_video_00188.webp
+/assets/canvas-asstes/home/About_video_00189.webp
+/assets/canvas-asstes/home/About_video_00190.webp
+/assets/canvas-asstes/home/About_video_00191.webp
+/assets/canvas-asstes/home/About_video_00192.webp
+/assets/canvas-asstes/home/About_video_00193.webp
+/assets/canvas-asstes/home/About_video_00194.webp
+/assets/canvas-asstes/home/About_video_00195.webp
+/assets/canvas-asstes/home/About_video_00196.webp
+/assets/canvas-asstes/home/About_video_00197.webp
+/assets/canvas-asstes/home/About_video_00198.webp
+/assets/canvas-asstes/home/About_video_00199.webp
+/assets/canvas-asstes/home/About_video_00200.webp
+/assets/canvas-asstes/home/About_video_00201.webp
+/assets/canvas-asstes/home/About_video_00202.webp
+/assets/canvas-asstes/home/About_video_00203.webp
+/assets/canvas-asstes/home/About_video_00204.webp
+/assets/canvas-asstes/home/About_video_00205.webp
+/assets/canvas-asstes/home/About_video_00206.webp
+/assets/canvas-asstes/home/About_video_00207.webp
+/assets/canvas-asstes/home/About_video_00208.webp
+/assets/canvas-asstes/home/About_video_00209.webp
+/assets/canvas-asstes/home/About_video_00210.webp
+/assets/canvas-asstes/home/About_video_00211.webp
+/assets/canvas-asstes/home/About_video_00212.webp
+/assets/canvas-asstes/home/About_video_00213.webp
+/assets/canvas-asstes/home/About_video_00214.webp
+/assets/canvas-asstes/home/About_video_00215.webp
+/assets/canvas-asstes/home/About_video_00216.webp
+/assets/canvas-asstes/home/About_video_00217.webp
+/assets/canvas-asstes/home/About_video_00218.webp
+/assets/canvas-asstes/home/About_video_00219.webp
+/assets/canvas-asstes/home/About_video_00220.webp
+/assets/canvas-asstes/home/About_video_00221.webp
+/assets/canvas-asstes/home/About_video_00222.webp
+/assets/canvas-asstes/home/About_video_00223.webp
+/assets/canvas-asstes/home/About_video_00224.webp
+/assets/canvas-asstes/home/About_video_00225.webp
+/assets/canvas-asstes/home/About_video_00226.webp
+/assets/canvas-asstes/home/About_video_00227.webp
+/assets/canvas-asstes/home/About_video_00228.webp
+/assets/canvas-asstes/home/About_video_00229.webp
+/assets/canvas-asstes/home/About_video_00230.webp
+/assets/canvas-asstes/home/About_video_00231.webp
+/assets/canvas-asstes/home/About_video_00232.webp
+/assets/canvas-asstes/home/About_video_00233.webp
+/assets/canvas-asstes/home/About_video_00234.webp
+/assets/canvas-asstes/home/About_video_00235.webp
+/assets/canvas-asstes/home/About_video_00236.webp
+/assets/canvas-asstes/home/About_video_00237.webp
+/assets/canvas-asstes/home/About_video_00238.webp
+/assets/canvas-asstes/home/About_video_00239.webp
+/assets/canvas-asstes/home/About_video_00240.webp
+/assets/canvas-asstes/home/About_video_00241.webp
+/assets/canvas-asstes/home/About_video_00242.webp
+/assets/canvas-asstes/home/About_video_00243.webp
+/assets/canvas-asstes/home/About_video_00244.webp
+/assets/canvas-asstes/home/About_video_00245.webp
+/assets/canvas-asstes/home/About_video_00246.webp
+/assets/canvas-asstes/home/About_video_00247.webp
+/assets/canvas-asstes/home/About_video_00248.webp
+/assets/canvas-asstes/home/About_video_00249.webp
+/assets/canvas-asstes/home/About_video_00250.webp
+/assets/canvas-asstes/home/About_video_00251.webp
+/assets/canvas-asstes/home/About_video_00252.webp
+/assets/canvas-asstes/home/About_video_00253.webp
+/assets/canvas-asstes/home/About_video_00254.webp
+/assets/canvas-asstes/home/About_video_00255.webp
+/assets/canvas-asstes/home/About_video_00256.webp
+/assets/canvas-asstes/home/About_video_00257.webp
+/assets/canvas-asstes/home/About_video_00258.webp
+/assets/canvas-asstes/home/About_video_00259.webp
+/assets/canvas-asstes/home/About_video_00260.webp
+/assets/canvas-asstes/home/About_video_00261.webp
+/assets/canvas-asstes/home/About_video_00262.webp
+/assets/canvas-asstes/home/About_video_00263.webp
+/assets/canvas-asstes/home/About_video_00264.webp
+/assets/canvas-asstes/home/About_video_00265.webp
+/assets/canvas-asstes/home/About_video_00266.webp
+/assets/canvas-asstes/home/About_video_00267.webp
+/assets/canvas-asstes/home/About_video_00268.webp
+/assets/canvas-asstes/home/About_video_00269.webp
+/assets/canvas-asstes/home/About_video_00270.webp
+/assets/canvas-asstes/home/About_video_00271.webp
+/assets/canvas-asstes/home/About_video_00272.webp
+/assets/canvas-asstes/home/About_video_00273.webp
+/assets/canvas-asstes/home/About_video_00274.webp
+/assets/canvas-asstes/home/About_video_00275.webp
+/assets/canvas-asstes/home/About_video_00276.webp
+/assets/canvas-asstes/home/About_video_00277.webp
+/assets/canvas-asstes/home/About_video_00278.webp
+/assets/canvas-asstes/home/About_video_00279.webp
+/assets/canvas-asstes/home/About_video_00280.webp
+/assets/canvas-asstes/home/About_video_00281.webp
+/assets/canvas-asstes/home/About_video_00282.webp
+/assets/canvas-asstes/home/About_video_00283.webp
+/assets/canvas-asstes/home/About_video_00284.webp
+/assets/canvas-asstes/home/About_video_00285.webp
+/assets/canvas-asstes/home/About_video_00286.webp
+/assets/canvas-asstes/home/About_video_00287.webp
+/assets/canvas-asstes/home/About_video_00288.webp
+/assets/canvas-asstes/home/About_video_00289.webp
+/assets/canvas-asstes/home/About_video_00290.webp
+/assets/canvas-asstes/home/About_video_00291.webp
+/assets/canvas-asstes/home/About_video_00292.webp
+/assets/canvas-asstes/home/About_video_00293.webp
+/assets/canvas-asstes/home/About_video_00294.webp
+/assets/canvas-asstes/home/About_video_00295.webp
+/assets/canvas-asstes/home/About_video_00296.webp
+/assets/canvas-asstes/home/About_video_00297.webp
+/assets/canvas-asstes/home/About_video_00298.webp
+/assets/canvas-asstes/home/About_video_00299.webp
+/assets/canvas-asstes/home/About_video_00300.webp
+/assets/canvas-asstes/home/About_video_00301.webp
+/assets/canvas-asstes/home/About_video_00302.webp
+/assets/canvas-asstes/home/About_video_00303.webp
+/assets/canvas-asstes/home/About_video_00304.webp
+/assets/canvas-asstes/home/About_video_00305.webp
+/assets/canvas-asstes/home/About_video_00306.webp
+/assets/canvas-asstes/home/About_video_00307.webp
+/assets/canvas-asstes/home/About_video_00308.webp
+/assets/canvas-asstes/home/About_video_00309.webp
+/assets/canvas-asstes/home/About_video_00310.webp
+/assets/canvas-asstes/home/About_video_00311.webp
+/assets/canvas-asstes/home/About_video_00312.webp
+/assets/canvas-asstes/home/About_video_00313.webp
+/assets/canvas-asstes/home/About_video_00314.webp
+/assets/canvas-asstes/home/About_video_00315.webp
+/assets/canvas-asstes/home/About_video_00316.webp
+/assets/canvas-asstes/home/About_video_00317.webp
+/assets/canvas-asstes/home/About_video_00318.webp
+/assets/canvas-asstes/home/About_video_00319.webp
+/assets/canvas-asstes/home/About_video_00320.webp
+/assets/canvas-asstes/home/About_video_00321.webp
+/assets/canvas-asstes/home/About_video_00322.webp
+/assets/canvas-asstes/home/About_video_00323.webp
+/assets/canvas-asstes/home/About_video_00324.webp
+/assets/canvas-asstes/home/About_video_00325.webp
+/assets/canvas-asstes/home/About_video_00326.webp
+/assets/canvas-asstes/home/About_video_00327.webp
+/assets/canvas-asstes/home/About_video_00328.webp
+/assets/canvas-asstes/home/About_video_00329.webp
+/assets/canvas-asstes/home/About_video_00330.webp
+/assets/canvas-asstes/home/About_video_00331.webp
+/assets/canvas-asstes/home/About_video_00332.webp
+/assets/canvas-asstes/home/About_video_00333.webp
+/assets/canvas-asstes/home/About_video_00334.webp
+/assets/canvas-asstes/home/About_video_00335.webp
+/assets/canvas-asstes/home/About_video_00336.webp
+/assets/canvas-asstes/home/About_video_00337.webp
+/assets/canvas-asstes/home/About_video_00338.webp
+/assets/canvas-asstes/home/About_video_00339.webp
+/assets/canvas-asstes/home/About_video_00340.webp
+/assets/canvas-asstes/home/About_video_00341.webp
+/assets/canvas-asstes/home/About_video_00342.webp
+/assets/canvas-asstes/home/About_video_00343.webp
+/assets/canvas-asstes/home/About_video_00344.webp
+/assets/canvas-asstes/home/About_video_00345.webp
+/assets/canvas-asstes/home/About_video_00346.webp
+/assets/canvas-asstes/home/About_video_00347.webp
+/assets/canvas-asstes/home/About_video_00348.webp
+/assets/canvas-asstes/home/About_video_00349.webp
+/assets/canvas-asstes/home/About_video_00350.webp
+/assets/canvas-asstes/home/About_video_00351.webp
+/assets/canvas-asstes/home/About_video_00352.webp
+/assets/canvas-asstes/home/About_video_00353.webp
+/assets/canvas-asstes/home/About_video_00354.webp
+/assets/canvas-asstes/home/About_video_00355.webp
+/assets/canvas-asstes/home/About_video_00356.webp
+/assets/canvas-asstes/home/About_video_00357.webp
+/assets/canvas-asstes/home/About_video_00358.webp
+/assets/canvas-asstes/home/About_video_00359.webp
+
  `;
     return data.split("\n")[index];
   }
 
-  const frameCount = 198;
+  const frameCount = 339;
 
   const images = [];
   const imageSeq = {
@@ -689,6 +802,8 @@ function canvas() {
   });
 }
 canvas();
+
+
 
 function canvas1() {
   const canvas = document.querySelector("#page18>canvas");
@@ -800,6 +915,8 @@ function canvas1() {
 }
 canvas1();
 
+
+
 var tl3 = gsap.timeline({
   scrollTrigger: {
     trigger: `#page21`,
@@ -839,9 +956,7 @@ gsap.to("#page23>img", {
   opacity: 1,
 });
 
-const burger = document.querySelector(".burger");
-const navLinks = document.getElementById("navLinks");
-const navLinksItems = document.querySelectorAll("#navLinks a");
+
 
 burger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
@@ -1361,3 +1476,49 @@ elements.map((element) => {
 });
 
 // --------------------------------------------------------------------------
+
+
+// gsap.to("#first img", {
+//   y: -10, // Move up by 10px
+//   duration: 3, // Slow animation (3 seconds for one cycle)
+//   repeat: -1, // Infinite repetition
+//   yoyo: true, // Reverse the animation
+//   ease: "power1.inOut", // Smooth easing
+// });
+
+// gsap.to("#second img", {
+//   y: -10,
+//   duration: 3,
+//   repeat: -1,
+//   yoyo: true,
+//   ease: "power1.inOut",
+//   delay: 1, // Delay for staggering
+// });
+
+// gsap.to("#third img", {
+//   y: -15, // Larger float for emphasis
+//   duration: 3.5,
+//   repeat: -1,
+//   yoyo: true,
+//   ease: "power1.inOut",
+//   delay: 2,
+// });
+
+// const svg = document.querySelector("svg.squiggle");
+// const path = svg.querySelector("path");
+
+// const scroll = () => {
+//   const distance = window.scrollY;
+//   const totalDistance = svg.clientHeight - window.innerHeight;
+
+//   const percentage = distance / totalDistance;
+
+//   const pathLength = path.getTotalLength();
+
+//   path.style.strokeDasharray = `${pathLength}`;
+//   path.style.strokeDashoffset = `${pathLength * (1 - percentage)}`;
+// };
+
+// scroll();
+// window.addEventListener("scroll", scroll);
+
