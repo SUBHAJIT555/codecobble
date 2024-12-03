@@ -952,7 +952,9 @@ body {
   border: none;
   border-radius: 10px;
   padding: 5px;
-  background-color: #00000044;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 .page-left h1 {
   font-family: var(--heading-font);
@@ -967,7 +969,9 @@ body {
   text-align: center;
   border: 2px solid lawngreen;
   padding: 5px;
-  background-color: #00000044;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 .page-right {
   position: relative;
@@ -979,7 +983,6 @@ body {
   align-items: end;
   gap: 20px;
   padding-right: 60px;
-  background-color: #000;
 }
 
 .page-right p {
@@ -993,7 +996,9 @@ body {
   border: none;
   border-radius: 10px;
   padding: 5px;
-  background-color: #00000044;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 .page-right h1 {
   font-family: var(--heading-font);
@@ -1009,7 +1014,9 @@ body {
   text-align: center;
   border: 2px solid lawngreen;
   padding: 5px;
-  background-color: #00000044;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 @media (max-width: 1024px) {
   .page-left,
