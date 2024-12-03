@@ -405,23 +405,19 @@ body {
   height: 150px;
   padding: 2vw;
   font-family: var(--text-font);
-  /* border-radius: 20px; */
   background: rgba(255, 255, 255, 0.11);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  border-radius: 20px;
   border: 2px solid lawngreen;
   border-radius: 20px;
   gap: 10px;
-  
 }
 .innerExpert h4 {
   text-align: center;
   color: white;
+  font-weight: 500;
 }
 .innerExpert img {
-  height: 4vw;
+  height: 4rem;
 }
 
 /* --------- PAGE 5 --------  */
@@ -515,6 +511,7 @@ body {
   font-family: var(--text-font);
   font-weight: 500;
   color: white;
+  border-bottom: 1px solid lawngreen;
 }
 .team-member .skills img {
   height: 30px;

@@ -413,7 +413,7 @@ page3Animation();
        scrollTrigger: {
          trigger: ".app",
          scroller: "#main",
-         start: "top 70%",
+         start: "top 60%",
          end: "top 50%",
          scrub: 3,
        },
@@ -525,7 +525,7 @@ page3Animation();
         scrollTrigger: {
           trigger: ".video",
           scroller: "#main",
-          start: "top 70%",
+          start: "top 60%",
           end: "top 50%",
           scrub: 3,
         },
@@ -538,7 +538,7 @@ page3Animation();
          scrollTrigger: {
            trigger: ".video",
            scroller: "#main",
-           start: "top 70%",
+           start: "top 60%",
            end: "top 50%",
            scrub: 3,
          },
@@ -551,7 +551,7 @@ page3Animation();
         scrollTrigger: {
           trigger: ".video",
           scroller: "#main",
-          start: "top 70%",
+          start: "top 60%",
           end: "top 50%",
           scrub: 3,
         },
@@ -564,7 +564,7 @@ page3Animation();
         scrollTrigger: {
           trigger: ".video",
           scroller: "#main",
-          start: "top 70%",
+          start: "top 60%",
           end: "top 50%",
           scrub: 3,
         },
