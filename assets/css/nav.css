@@ -1,8 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+@font-face {
+  font-family: Croparo;
+  src: url("../font/Raleway-Bold.ttf");
+}
+@font-face {
+  font-family: Raleway;
+  src: url("../font/Raleway-Regular.ttf");
+}
+:root {
+  --heading-font: Croparo;
+  --text-font: Raleway;
+}
+
 .mainnav {
   position: relative;
 }
+
 .hamburger {
   width: 100%;
   height: 10%;
@@ -69,8 +83,8 @@
 .listmain li a {
   color: #ffff;
   font-size: 80px;
-  font-family: "Raleway", sans-serif;
-  font-weight: bold;
+  font-family: var(--heading-font);
+  font-weight: 500;
   text-decoration: none;
   position: relative;
   transition: all ease 0.5s;
@@ -191,6 +205,9 @@
 
 .submenuopen li a {
   font-size: 20px;
+  font-family: var(--text-font);
+  line-height: 40px;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 .submenuopen li a::after {

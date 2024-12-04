@@ -229,7 +229,7 @@ function canvas2() {
       trigger: `#page-videosolution`,
       //   set start end according to preference
       start: `-40% top`,
-      end: `100% top`,
+      end: `+=2000`,
       scroller: `#main`,
     },
     onUpdate: render,
@@ -378,12 +378,18 @@ tl2.to("#page4>#center-page4", {
   top: `-50%`,
 });
 
-function canvas() {
+
+
+
+
+
+function canvas(){
   const canvas = document.querySelector("#page7>canvas");
   const context = canvas.getContext("2d");
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+
 
   window.addEventListener("resize", function () {
     canvas.width = window.innerWidth;
@@ -393,7 +399,7 @@ function canvas() {
 
   function files(index) {
     var data = `
-  /assets/canvas-asstes/home/About_video_00021.webp
+          /assets/canvas-asstes/home/About_video_00021.webp
 /assets/canvas-asstes/home/About_video_00022.webp
 /assets/canvas-asstes/home/About_video_00023.webp
 /assets/canvas-asstes/home/About_video_00024.webp
@@ -732,11 +738,9 @@ function canvas() {
 /assets/canvas-asstes/home/About_video_00357.webp
 /assets/canvas-asstes/home/About_video_00358.webp
 /assets/canvas-asstes/home/About_video_00359.webp
-
  `;
     return data.split("\n")[index];
   }
-
   const frameCount = 339;
 
   const images = [];
@@ -755,123 +759,10 @@ function canvas() {
     snap: "frame",
     ease: `none`,
     scrollTrigger: {
-      scrub: 0.15,
-      trigger: `#page7>canvas`,
-      //   set start end according to preference
+      scrub: 0.5,
+      trigger: `#page7`,
       start: `top top`,
       end: `600% top`,
-      scroller: `#main`,
-    },
-    onUpdate: render,
-  });
-
-  images[1].onload = render;
-
-  function render() {
-    scaleImage(images[imageSeq.frame], context);
-  }
-
-  function scaleImage(img, ctx) {
-    var canvas = ctx.canvas;
-    var hRatio = canvas.width / img.width;
-    var vRatio = canvas.height / img.height;
-    var ratio = Math.min(hRatio, vRatio);
-    var centerShift_x = (canvas.width - img.width * ratio) / 2;
-    var centerShift_y = (canvas.height - img.height * ratio) / 2;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(
-      img,
-      0,
-      0,
-      img.width,
-      img.height,
-      centerShift_x,
-      centerShift_y,
-      img.width * ratio,
-      img.height * ratio
-    );
-  }
-  ScrollTrigger.create({
-    trigger: "#page7>canvas",
-    pin: true,
-    // markers:true,
-    scroller: `#main`,
-    //   set start end according to preference
-    start: `top top`,
-    end: `600% top`,
-  });
-}
-canvas();
-
-
-
-function canvas1() {
-  const canvas = document.querySelector("#page18>canvas");
-  const context = canvas.getContext("2d");
-
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  window.addEventListener("resize", function () {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    render();
-  });
-
-  function files(index) {
-    var data = `
-/assets/img/canvas/Vision00001.png
-/assets/img/canvas/Vision00002.png
-/assets/img/canvas/Vision00003.png
-/assets/img/canvas/Vision00004.png
-/assets/img/canvas/Vision00005.png
-/assets/img/canvas/Vision00006.png
-/assets/img/canvas/Vision00007.png
-/assets/img/canvas/Vision00008.png
-/assets/img/canvas/Vision00009.png
-/assets/img/canvas/Vision00010.png
-/assets/img/canvas/Vision00011.png
-/assets/img/canvas/Vision00012.png
-/assets/img/canvas/Vision00013.png
-/assets/img/canvas/Vision00014.png
-/assets/img/canvas/Vision00015.png
-/assets/img/canvas/Vision00016.png
-/assets/img/canvas/Vision00017.png
-/assets/img/canvas/Vision00018.png
-/assets/img/canvas/Vision00019.png
-/assets/img/canvas/Vision00020.png
-/assets/img/canvas/Vision00021.png
-/assets/img/canvas/Vision00022.png
-/assets/img/canvas/Vision00023.png
-/assets/img/canvas/Vision00024.png
-/assets/img/canvas/Vision00025.png
-`;
-    return data.split("\n")[index];
-  }
-
-  const frameCount = 25;
-
-  const images = [];
-  const imageSeq = {
-    frame: 1,
-  };
-
-  for (let i = 0; i < frameCount; i++) {
-    const img = new Image();
-    img.src = files(i);
-    images.push(img);
-  }
-
-  gsap.to(imageSeq, {
-    frame: frameCount - 1,
-    snap: "frame",
-    ease: `none`,
-    scrollTrigger: {
-      scrub: 0.15,
-      trigger: `#page18`,
-      //   set start end according to preference
-      start: `top top`,
-      end: `80% top`,
       scroller: `#main`,
     },
     onUpdate: render,
@@ -904,46 +795,31 @@ function canvas1() {
     );
   }
   ScrollTrigger.create({
-    trigger: "#page18",
+    trigger: "#page7>canvas",
     pin: true,
-    // markers:true,
     scroller: `#main`,
-    //   set start end according to preference
     start: `top top`,
-    end: `80% top`,
+    end: `600% top`,
   });
 }
-canvas1();
+canvas();
 
 
 
-var tl3 = gsap.timeline({
-  scrollTrigger: {
-    trigger: `#page21`,
-    start: `top top`,
-    scrub: 1,
-    scroller: `#main`,
-    pin: true,
-  },
-});
 
-tl3.to("#page21>#troff", {
-  opacity: 0,
-});
 
-var tl4 = gsap.timeline({
-  scrollTrigger: {
-    trigger: `#page22`,
-    start: `top top`,
-    scrub: 1,
-    scroller: `#main`,
-    pin: true,
-  },
-});
 
-tl4.to("#page22>#snroff", {
-  opacity: 0,
-});
+
+
+
+
+
+
+
+
+
+
+
 
 gsap.to("#page23>img", {
   scrollTrigger: {

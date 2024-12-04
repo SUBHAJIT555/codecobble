@@ -12,6 +12,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* --------- selection ------  */
 ::selection {
   background-color: lawngreen;
   color: #6b34e2;
