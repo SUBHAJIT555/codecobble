@@ -683,7 +683,7 @@ gsap.to(".page7-cir-inner",{
    scrollTrigger: {
      trigger: ".page11-inner",
      scroller: "#main",
-     start: "top 70%",
+     start: "top 80%",
      end: "top -10%",
      scrub: 3,
    },

@@ -74,6 +74,9 @@ gsap.to("#page-bottom", {
   opacity: 0,
 });
 
+// -------- canvas for video solution ----- 
+
+
 function canvas2() {
   const canvas = document.querySelector("#page-videosolution>canvas");
   const context = canvas.getContext("2d");
@@ -211,7 +214,7 @@ function canvas2() {
   const frameCount = 115;
   const images = [];
   const imageSeq = {
-    frame: 0.5,
+    frame: 1,
   };
 
   for (let i = 0; i < frameCount; i++) {
@@ -228,8 +231,8 @@ function canvas2() {
       scrub: 0.15,
       trigger: `#page-videosolution`,
       //   set start end according to preference
-      start: `-40% top`,
-      end: `+=2000`,
+      start: `-50% top`,
+      end: `+=2150`,
       scroller: `#main`,
     },
     onUpdate: render,
@@ -268,16 +271,13 @@ function canvas2() {
     scroller: `#main`,
     //   set start end according to preference
     start: `top top`,
-    end: `150% top`,
+    end: `140% top`,
   });
 }
 canvas2();
 
 
-// --------------------------------------- 
 
- 
-// ----------------------------------------- 
 
 
 
@@ -379,9 +379,7 @@ tl2.to("#page4>#center-page4", {
 });
 
 
-
-
-
+// -------------- canvas for hero section ----- 
 
 function canvas(){
   const canvas = document.querySelector("#page7>canvas");
@@ -803,23 +801,6 @@ function canvas(){
   });
 }
 canvas();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 gsap.to("#page23>img", {
   scrollTrigger: {
@@ -1354,47 +1335,4 @@ elements.map((element) => {
 // --------------------------------------------------------------------------
 
 
-// gsap.to("#first img", {
-//   y: -10, // Move up by 10px
-//   duration: 3, // Slow animation (3 seconds for one cycle)
-//   repeat: -1, // Infinite repetition
-//   yoyo: true, // Reverse the animation
-//   ease: "power1.inOut", // Smooth easing
-// });
-
-// gsap.to("#second img", {
-//   y: -10,
-//   duration: 3,
-//   repeat: -1,
-//   yoyo: true,
-//   ease: "power1.inOut",
-//   delay: 1, // Delay for staggering
-// });
-
-// gsap.to("#third img", {
-//   y: -15, // Larger float for emphasis
-//   duration: 3.5,
-//   repeat: -1,
-//   yoyo: true,
-//   ease: "power1.inOut",
-//   delay: 2,
-// });
-
-// const svg = document.querySelector("svg.squiggle");
-// const path = svg.querySelector("path");
-
-// const scroll = () => {
-//   const distance = window.scrollY;
-//   const totalDistance = svg.clientHeight - window.innerHeight;
-
-//   const percentage = distance / totalDistance;
-
-//   const pathLength = path.getTotalLength();
-
-//   path.style.strokeDasharray = `${pathLength}`;
-//   path.style.strokeDashoffset = `${pathLength * (1 - percentage)}`;
-// };
-
-// scroll();
-// window.addEventListener("scroll", scroll);
 

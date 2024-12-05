@@ -71,7 +71,7 @@ body {
 }
 
 
-/* Hero */
+/* ---------------------------Hero----------------------------- */
 .carousel{
     position: relative;
     height: 100vh;
@@ -187,7 +187,7 @@ body {
 .carousel .list .item:nth-child(2) .introduce .des,
 .carousel .list .item:nth-child(2) .introduce .seeMore{
     opacity: 0;
-    animation: showContent 0.5s 1s ease-in-out 1 forwards;
+    animation: showContent 0.2s 0.5s ease-in-out 1 forwards;
 }
 @keyframes showContent{
     from{
@@ -200,13 +200,13 @@ body {
     }
 }
 .carousel .list .item:nth-child(2) .introduce .topic{
-    animation-delay: 1.2s;
+    animation-delay: 0.5s;
 }
 .carousel .list .item:nth-child(2) .introduce .des{
-    animation-delay: 1.4s;
+    animation-delay: 0.7s;
 }
 .carousel .list .item:nth-child(2) .introduce .seeMore{
-    animation-delay: 1.6s;
+    animation-delay: 0.9s;
 }
 /* next click */
 .carousel.next .item:nth-child(1){
@@ -495,7 +495,7 @@ body {
         float: right;
     }
 }
-/* Hero end */
+/*------------------------------ Hero end------------------------------  */
 #page-videosolution{
   position: relative;
   /* height: 200vh; */
@@ -687,8 +687,8 @@ body {
   width: 100%;
   object-fit: cover;
   padding: 1.5vw;
-  border-radius: 70px;
-  opacity: 0.3;
+  border-radius: 50px;
+  opacity: 0.5;
 }
 #page1 > h1 {
   font-size: 4rem;
@@ -718,8 +718,8 @@ body {
   width: 100%;
   object-fit: cover;
   padding: 1.5vw;
-  border-radius: 70px;
-  opacity: 0.3;
+  border-radius: 50px;
+  opacity: 0.5;
 }
 #page2 > h1 {
   font-size: 4rem;
@@ -956,11 +956,11 @@ body {
   z-index: 99;
   position: relative;
   line-height: 1.2;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: justify;
   border: none;
   border-radius: 10px;
-  padding: 5px;
+  padding: 15px;
   background-color: transparent;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -974,9 +974,9 @@ body {
   color: white;
   background-color: transparent;;
   width: 28%;
-  border-radius: 50px;
+  border-radius: 10px;
   text-align: center;
-  border: 2px solid white;
+  
   padding: 5px;
   background-color: rgba(126, 252, 0, 0.281);
   backdrop-filter: blur(20px);
@@ -1000,11 +1000,11 @@ body {
   color: white;
   z-index: 99;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: justify;
   border: none;
   border-radius: 10px;
-  padding: 5px;
+  padding: 15px;
   background-color: transparent;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -1019,9 +1019,8 @@ body {
   color: white;
   background-color: transparent;;
   width: 28%;
-  border-radius: 50px;
+  border-radius: 10px;
   text-align: center;
-  border: 2px solid white;
   padding: 5px;
   background-color: rgba(126, 252, 0, 0.281);
   backdrop-filter: blur(20px);
@@ -1699,7 +1698,7 @@ body {
     font-size: 4vw;
   }
 
-  #page7,
+  /* #page7, */
   #page9,
   #page10,
   #page11,
@@ -1998,7 +1997,7 @@ svg.squiggle path {
 }
 #newsletter .input {
   background-color: #000;
-  border: 0.5px solid lawngreen;
+  border: 0.5px solid white;
   padding: 20px;
   border-radius: 50px;
   width: 100%;
