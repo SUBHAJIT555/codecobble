@@ -170,6 +170,7 @@ body {
   z-index: 9;
 }
 
+
 #page1-something {
   display: flex;
   align-items: center;
@@ -192,7 +193,7 @@ body {
   color: white;
 }
 #page1-something h4:hover {
-  transform: translateY(30%);
+  /* transform: translateY(-20%); */
   border: 3px solid #000;
   color: #000;
 }
@@ -235,7 +236,7 @@ body {
   white-space: nowrap;
   padding: 1.2vw;
   overflow: hidden;
-  width: 50%;
+  width: 60%;
 }
 
 #moving-div .move {
@@ -244,11 +245,14 @@ body {
   animation-duration: 9s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  /* filter: grayscale(100%);
+  mix-blend-mode:color-dodge; */
 }
 
 #moving-div .move img {
-  height: 1vw;
-  margin: 0 1.2vw;
+  height: 1.8rem;
+  margin: 0 1.5rem;
+  
 }
 
 @keyframes mobe {
@@ -538,7 +542,7 @@ body {
 }
 
 #page5-right > p {
-  font-size: 2.1vw;
+  font-size: 1.5rem;
   font-family: var(--text-font);
   z-index: 9;
   color: white;
@@ -595,13 +599,12 @@ body {
 
 .page5-elem p {
   width: 55%;
-  font-size: 0.8vw;
+  font-size: 1rem;
   position: relative;
   z-index: 8;
   font-family: var(--text-font);
   color: white;
   line-height: 1.2vw;
-  text-decoration: underline 0.2px #999;
 }
 
 .page5-elem h3 {
@@ -701,7 +704,7 @@ summary::marker {
 }
 
 #page6-content #right-6 p {
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   color: white;
   margin-bottom: 5vh;
   width: 80%;
@@ -725,7 +728,7 @@ summary::marker {
 #blue-btn h4 {
   position: absolute;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 500;
   font-size: 0.85vw;
   font-family: var(--text-font);
   color: #000;
@@ -738,13 +741,14 @@ summary::marker {
   margin-left: 0.5vw;
 }
 
+/* ------------ footer css-----------  */
 #footer {
   display: flex;
   flex-direction: column;
   gap: 1vw;
   padding: 1vw 5vw;
   width: 100%;
-  border-top: 1px solid white;
+  border-top: 1px solid gray;
 }
 #footer-top {
   display: flex;
@@ -761,7 +765,7 @@ summary::marker {
 }
 #address h1 {
   font-family: var(--heading-font);
-  color: lawngreen;
+  color: white;
 }
 #addrerss p {
   font-family: var(--text-font);
@@ -779,18 +783,20 @@ summary::marker {
   width: 20%;
   display: flex;
   flex-direction: column;
-  font-family: var(--text-font);
   padding-left: 1vw;
-  border-left: 1px solid white;
+  border-left: 1px solid gray;
 }
 #UsefullLinks h1 {
-  color: lawngreen;
+  color: white;
   font-family: var(--heading-font);
   padding-bottom: 1vw;
 }
 #UsefullLinks h3 {
   color: white;
   padding-bottom: 0.5vw;
+  font-family: var(--text-font);
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 #UsefullLinks i {
   color: lawngreen;
@@ -807,18 +813,20 @@ summary::marker {
   width: 20%;
   display: flex;
   flex-direction: column;
-  font-family: var(--text-font);
   padding-left: 1vw;
-  border-left: 1px solid white;
+  border-left: 1px solid gray;
 }
 #catagory h1 {
-  color: lawngreen;
+  color: white;
   font-family: var(--heading-font);
   padding-bottom: 1vw;
 }
 #catagory h3 {
   color: white;
   padding-bottom: 1vw;
+  font-family: var(--text-font);
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 #catagory i {
   color: lawngreen;
@@ -838,30 +846,28 @@ summary::marker {
   gap: 1vw;
   font-family: var(--text-font);
   padding-left: 1vw;
-  border-left: 0.5px solid white;
+  border-left: 0.5px solid gray;
 }
 #newsletter .input {
+  background-color: #000;
+  border: 0.5px solid white;
+  padding: 20px;
+  border-radius: 50px;
   width: 100%;
+  font-family: var(--text-font);
+  color: lawngreen;
+  font-size: 1rem;
 }
+
 #newsletter h1 {
   font-family: var(--heading-font);
-  color: lawngreen;
+  color: white;
 }
 #newsletter p {
   font-family: var(--text-font);
   color: white;
   line-height: 1.3vw;
   padding-bottom: 1vw;
-}
-#newsletter .input {
-  background-color: #000;
-  border: 0.5px solid #dadada;
-  padding: 20px;
-  border-radius: 50px;
-  width: 100%;
-  font-family: var(--text-font);
-  color: white;
-  font-size: 1rem;
 }
 #newsletter #button {
   display: flex;
@@ -878,13 +884,13 @@ summary::marker {
   border-radius: 50px;
 }
 #footer-bottom {
-  border-top: 1px solid white;
+  border-top: 1px solid gray;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 1vw;
   font-family: var(--text-font);
-  color: white;
+  color: gray;
 }
 
 @media (max-width: 600px) {
